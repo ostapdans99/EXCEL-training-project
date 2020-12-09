@@ -1,0 +1,28 @@
+@import "variables";
+@import "mixins";
+
+.toolbar {
+  display: flex;
+  border-top: 1px solid $border-color;
+  border-bottom: 1px solid $border-color;
+
+  & .toolbar__section {
+    padding: 0 10px;
+    border-right: 1px solid $border-color;
+
+    & .button {
+      @include button(#00c500);
+      border-radius: 2px;
+      margin-right: 10px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      &:active,
+      &.active {
+        background: #cfffcf;
+      }
+    }
+  }
+}
