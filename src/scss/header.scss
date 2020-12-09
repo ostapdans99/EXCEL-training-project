@@ -1,0 +1,40 @@
+@import "variables";
+@import "mixins";
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+
+  & .header__title {
+    padding: 12px 7px;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+    color: #777;
+    border: 2px solid transparent;
+    border-radius: 2px;
+    outline: none;
+
+    &:hover {
+      border: 2px solid $border-color;
+    }
+    &:focus {
+      border: 2px solid #1a73e8;
+      color: #000;
+    }
+  }
+
+  & .button {
+    @include button(red);
+
+    &:active,
+    &.active {
+      background: #f7c4c4;
+    }
+  }
+  & .button:first-child {
+    margin-right: 20px;
+  }
+}

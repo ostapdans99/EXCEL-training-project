@@ -1,0 +1,57 @@
+@import "variables";
+@import "mixins";
+
+.table {
+  height: 100%;
+  width: 100%;
+  padding-bottom: 2px;
+  overflow: scroll;
+
+  & .row {
+    display: flex;
+    min-height: 20px;
+    height: $row-height;
+
+    & .row-info {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-width: $info-cell-width;
+      border: 1px solid $border-color;
+      border-top: none;
+      background: #f8f9fa;
+    }
+
+    & .row-data {
+      display: flex;
+
+      & .column {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: $cell-width;
+        min-width: 40px;
+        background: #f8f9fa;
+        border: 1px solid $border-color;
+        border-top: none;
+        border-left: none;
+      }
+
+      & .cell {
+        width: $cell-width;
+        min-width: 40px;
+        padding: 5px;
+        border: 1px solid #e2e3e3;
+        border-top: none;
+        border-left: none;
+        white-space: nowrap;
+        outline: none;
+
+        &.selected {
+          border: none;
+          outline: 2px solid #3c74ff;
+        }
+      }
+    }
+  }
+}
